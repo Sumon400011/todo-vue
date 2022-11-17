@@ -1,0 +1,129 @@
+@import './base.css';
+.main-section{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.main-bar{
+    border-radius: 12px;
+    padding: 30px 28px 30px 28px;
+}
+.main-title{
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--moon);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.card{
+    border-radius: 12px;
+    color: var(--moon);
+    background-color: var(--dark2);
+    min-height: 280px;
+    overflow: hidden;
+}
+.card-header{
+    padding: 18px 18px 0px 18px!important;
+    font-weight: 500;
+    border-bottom: 0px;
+}
+.card-header p{
+    font-weight: 500;
+    margin-bottom: 0;
+}
+.card-body{
+    padding-top: 12px!important;
+}
+.card-title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+.card-text{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 100;
+}
+.card-footer{
+    background-color: var(--gray);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.card-footer .icons{
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+
+.modal-header{
+    border-bottom: 0px;
+    padding: 30px 40px 15px 40px;
+}
+
+.modal-body{
+    padding: 0px 40px 40px 40px;
+}
+.modal-content{
+    border-radius: 12px;
+    background-color: var(--dark2);
+}
+
+button.close{
+    color: var(--moon);
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    padding: 0px;
+}
+
+
+.input-style{
+    background-color: var(--dark3);
+    border: 1px solid transparent;
+    color: var(--moon);
+    font-size: 15px;
+    font-weight: 300;
+    border-radius: 6px;
+}
+.input-style:focus{
+    background-color: var(--dark3);
+    box-shadow: none;
+    border: 1px solid var(--moon)!important;
+    color: var(--moon);
+    font-size: 15px;
+    font-weight: 300;
+}
+.input-style::placeholder{
+    color: var(--moon);
+}
+select:focus{
+    box-shadow: none;
+}
+select{
+    background-blend-mode: screen;
+}
+option{
+    color: var(--moon);
+}
+textarea{
+    padding: 10px;
+    box-shadow: none;
+}
+textarea:focus{
+    background-color: var(--dark3);
+    box-shadow: none;
+    border: 1px solid var(--moon)!important;
+}
+.submit-btn{
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 8px;
+    color: var(--moon);
+    background-color: var(--dark3);
+}
+.submit-btn:hover{
+    background-color: var(--dark3);
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+}

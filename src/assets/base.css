@@ -1,0 +1,131 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --dark1: #0A192F;
+  --dark2: #172A46;
+  --dark3: #213F6A;
+
+  --aqua: #67FFE0;
+  --moon: #CAD4F4;
+
+  --gray: #6B778D;
+
+  --gray1: #2B2E33;
+  --gray2: #2B2E33;
+  --gray3: #3B454F;
+  --gray4: #373737;
+
+  --white: #ffffff;
+  --white-soft: #f8f8f8;
+  --white-mute: #f2f2f2;
+
+  --accent: #33A9FE;
+  --warning: #FAC662;
+  --positive: #35DF91;
+  --negative: #FF6768;
+}
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--moon);
+  background: var(--dark1);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-gray-1{
+  background-color: var(--gray1);
+}
+.bg-gray-2{
+  background-color: var(--gray2);
+}
+.bg-gray-3{
+  background-color: var(--gray3);
+}
+.bg-gray-4{
+  background-color: var(--gray4);
+}
+
+.color-dark-1{
+  color: var(--dark1);
+}
+.color-dark-2{
+  color: var(--dark2);
+}
+.color-dark-3{
+  color: var(--dark3);
+}
+
+
+.bg-dark-1{
+  background-color: var(--dark1);
+}
+.bg-dark-2{
+  background-color: var(--dark2);
+}
+.bg-dark-3{
+  background-color: var(--dark3);
+}
+
+.color-gray{
+  color: var(--gray);
+}
+.color-gray-1{
+  color: var(--gray1);
+}
+.color-gray-2{
+  color: var(--gray2);
+}
+.color-gray-3{
+  color: var(--gray3);
+}
+.color-gray-4{
+  color: var(--gray4);
+}
+
+
+
+.bg-accent{
+  background-color: var(--accent);
+}
+.bg-warning{
+  background-color: var(--warning);
+}
+.bg-positive{
+  background-color: var(--positive);
+}
+.bg-negative{
+  background-color: var(--negative);
+}
+
+.font-12{
+  font-size: 12px;
+}
+.font-14{
+  font-size: 14px;
+}
+.font-16{
+  font-size: 16px;
+}
+
+.circle{
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
