@@ -17,6 +17,7 @@
             data-bs-dismiss="modal"
             aria-label="Close"
             style="color: white"
+            ref="Close"
           >
             <i class="fa-solid fa-x"></i>
           </button>
@@ -106,12 +107,13 @@ export default {
       this.clearModal();
     },
     clearModal() {
+      this.id = null;
+      this.titles = "";
+      this.prio = "Normal";
+      this.contents = "";
       setTimeout(() => {
-          this.id = null;
-          this.titles = "";
-          this.prio = "Normal";
-          this.contents = "";
-      }, 600);
+        this.$refs.Close.click();
+      }, 500);
     },
   },
   computed: {
