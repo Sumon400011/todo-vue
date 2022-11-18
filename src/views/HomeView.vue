@@ -30,7 +30,7 @@
         class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2 g-lg-3 align-items-stretch"
       >
         <div class="col my-2" v-for="(note, index) in notes" :key="index">
-          <CardsComp :note="note" />
+          <CardsComp :note="note" :index="index" @noteRemove="noteRemove" />
         </div>
       </div>
       <ModalComp @saveNoteVal="saveNote" />
@@ -59,26 +59,12 @@ export default {
   methods: {
     saveNote(val) {
       val["id"] = this.notes.length + 1;
-      // val.created = this.dateToday;
-      console.log("before push", val);
       this.notes.push(val);
-      console.log("after push", val);
-      console.log("notes", this.notes);
+    },
+    noteRemove(index) {
+      this.notes.splice(index, 1);
     },
   },
-  // computed: {
-  //   dateToday() {
-  //     const today = new Date();
-  //     const yyyy = today.getFullYear();
-  //     let mm = today.getMonth() + 1; // Months start at 0!
-  //     let dd = today.getDate();
-
-  //     if (dd < 10) dd = "0" + dd;
-  //     if (mm < 10) mm = "0" + mm;
-
-  //     return dd + "-" + mm + "-" + yyyy;
-  //   },
-  // },
   created() {
     this.notes = data;
   },

@@ -27,7 +27,9 @@
           v-if="note.priority == 'High'"
         ></div>
         <div class="d-flex ms-auto">
-          <div class="icons"><i class="fa-solid fa-trash-can"></i></div>
+          <div class="icons" @click="removeItem(index)">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
           <div class="icons"><i class="fa-solid fa-pen-to-square"></i></div>
           <div class="icons" style="font-size: 17px">
             <i class="fa-solid fa-square-check"></i>
@@ -37,9 +39,18 @@
     </div>
   </div>
 </template>
-<script lang="ts">
+<script>
 export default {
   name: "CardsComp",
-  props: ["note"],
+  props: ["note", "index"],
+  // data() {
+
+  // },
+  methods: {
+    removeItem(index) {
+      // console.log(index);
+      this.$emit("noteRemove", index);
+    },
+  },
 };
 </script>
