@@ -42,7 +42,7 @@ import CardsComp from "../components/CardsComp.vue";
 import ModalComp from "../components/ModalComp.vue";
 import PriorityComp from "../components/PriorityComp.vue";
 import IconIntros from "../components/IconIntros.vue";
-import data from "../Data/datas";
+// import data from "../Data/datas";
 export default {
   name: "HomeView",
   components: {
@@ -65,8 +65,18 @@ export default {
       this.notes.splice(index, 1);
     },
   },
-  created() {
-    this.notes = data;
+  mounted() {
+    if (localStorage.getItem("data")) {
+      this.notes = JSON.parse(localStorage.getItem("data"));
+    }
+  },
+  watch: {
+    notes: {
+      handler() {
+        localStorage.setItem("data", JSON.stringify(this.notes));
+      },
+      deep: true,
+    },
   },
 };
 </script>
