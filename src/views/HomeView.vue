@@ -30,16 +30,30 @@
         class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2 g-lg-3 align-items-stretch"
       >
         <div class="col my-2" v-for="(note, index) in notes" :key="index">
-          <CardsComp :note="note" :index="index" @noteRemove="noteRemove" />
+          <CardsComp
+            :note="note"
+            :index="index"
+            @noteRemove="noteRemove"
+            @dblclick="showBigNotes(note)"
+          />
         </div>
       </div>
       <ModalComp @saveNoteVal="saveNote" />
+      <span
+        data-bs-toggle="modal"
+        data-bs-target="#viewModal"
+        style="visibility: hidden; height: 0; width: 0"
+        ref="viewModal"
+      >
+      </span>
+      <ViewModal :bigNote="bigNote" />
     </div>
   </section>
 </template>
 <script>
 import CardsComp from "../components/CardsComp.vue";
 import ModalComp from "../components/ModalComp.vue";
+import ViewModal from "../components/ViewModal.vue";
 import PriorityComp from "../components/PriorityComp.vue";
 import IconIntros from "../components/IconIntros.vue";
 // import data from "../Data/datas";
@@ -50,10 +64,12 @@ export default {
     ModalComp,
     PriorityComp,
     IconIntros,
+    ViewModal,
   },
   data() {
     return {
       notes: [],
+      bigNote: {},
     };
   },
   methods: {
@@ -63,6 +79,10 @@ export default {
     },
     noteRemove(index) {
       this.notes.splice(index, 1);
+    },
+    showBigNotes(note) {
+      this.bigNote = note;
+      this.$refs.viewModal.click();
     },
   },
   mounted() {
